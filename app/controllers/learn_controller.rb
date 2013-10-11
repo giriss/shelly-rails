@@ -6,5 +6,11 @@ class LearnController < ApplicationController
   end
 
   def lesson3
+    if params[:name] then
+      @name = params[:name]
+    else
+      @name = :default
+    end
+    render text: "Hello " + @name
   end
 end
