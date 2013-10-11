@@ -7,7 +7,7 @@ class LearnController < ApplicationController
   end
 
   def lesson2
-    uri = URI "http://akh-rails.herokuapp.com/learn/lesson4"
+    uri = URI "http://akh-rails.herokuapp.com/learn/lesson3"
     res = Net::HTTP.post_form uri, :name => params[:name]
     render text: "Hi " + res.body
   end
