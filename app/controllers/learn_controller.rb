@@ -16,7 +16,7 @@ class LearnController < ApplicationController
     if params[:name] then
       @name = params[:name]
     else
-      @name = :default
+      @name = 'default'
     end
     render text: "Hello " + @name
   end
