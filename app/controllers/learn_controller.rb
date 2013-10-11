@@ -1,4 +1,5 @@
 class LearnController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:lesson3]
   def lesson1
   end
 
