@@ -1,5 +1,6 @@
 Shelly::Application.routes.draw do
   get "learn/lesson1"
+  get "learn/lesson2/:name", to: "learn#lesson2", constraints: {name: /[A-Za-z]+/}
   get "learn/lesson2"
   get "learn/lesson3"
   post "learn/lesson3"
