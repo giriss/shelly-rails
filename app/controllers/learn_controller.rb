@@ -15,7 +15,7 @@ class LearnController < ApplicationController
     @post.set_form_data(:USER => "akhil05%40mail.com", :PASSWORD => "GYKDrxxSRLtYlonp", :AMOUNT => "25", :CURRENCY => "USD", :RECEIVEREMAIL => "client_1_akhil05%40mail.com", :SENDEREMAIL => "akhil05%40mail.com", :PURCHASETYPE => "1", :NOTE => "This+is+not+a+test+transaction.", :TESTMODE => "1")
     @req = @https.request(@post)
     @ret = @req # "Req.message: " + @req.message + "<br />Req.code: " + @req.code + "<br />Response: " + @req.body
-    render text: @ret
+    render text: @ret.body
   end
 
   def lesson2
