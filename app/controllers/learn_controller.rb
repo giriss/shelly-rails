@@ -8,12 +8,12 @@ class LearnController < ApplicationController
   def lesson1
     # POST a send money using Payza api (Testmode=TRUE)
     @data = {
-      :USER => "akhil05@mail.com",
+      :USER => "seller_1_akhil05@mail.com",
       :PASSWORD => "GYKDrxxSRLtYlonp",
       :AMOUNT => "25",
       :CURRENCY => "USD",
       :RECEIVEREMAIL => "client_1_akhil05@mail.com",
-      :SENDEREMAIL => "akhil05@mail.com",
+      :SENDEREMAIL => "seller_1_akhil05@mail.com",
       :PURCHASETYPE => "1",
       :NOTE => "This+is+a+test+transaction.",
       :TESTMODE => "1"
