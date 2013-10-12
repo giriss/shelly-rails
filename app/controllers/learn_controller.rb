@@ -18,7 +18,8 @@ class LearnController < ApplicationController
       :NOTE => "This+is+a+test+transaction.",
       :TESTMODE => "1"
     }
-    @uri = URI.parse("https://api.payza.com/svc/api.svc/sendmoney")
+    @url = "https://sandbox.Payza.com/api/api.svc/sendmoney"
+    @uri = URI.parse(@url)
     @https = Net::HTTP.new(@uri.host,@uri.port)
     @https.use_ssl = true
     @post = Net::HTTP::Post.new(@uri.path)
