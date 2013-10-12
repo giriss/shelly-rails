@@ -8,7 +8,7 @@ class LearnController < ApplicationController
     require 'net/http'
     require 'net/https'
     
-    data = "USER=akhil05%40mail.com&PASSWORD=g1VPD20qBH3qHmzJ&AMOUNT=25&CURRENCY=USD&RECEIVEREMAIL=recipient%40example.com&SENDEREMAIL=myemail%40example.com&PURCHASETYPE=1&NOTE=This+is+a+test+transaction.&TESTMODE=1"
+    data = "USER=akhil05%40mail.com&PASSWORD=g1VPD20qBH3qHmzJ&AMOUNT=25&CURRENCY=USD&RECEIVEREMAIL=recipient%40example.com&SENDEREMAIL=akhil05%40mail.com&PURCHASETYPE=1&NOTE=This+is+a+test+transaction.&TESTMODE=1"
     uri = URI.parse("https://api.payza.com/svc/api.svc/sendmoney")
     https = Net::HTTP.new(uri.host,uri.port)
     https.use_ssl = true
