@@ -13,7 +13,7 @@ class LearnController < ApplicationController
     https = Net::HTTP.new(uri.host,uri.port)
     https.use_ssl = true
     req = https.post(uri.path, data)
-    render text: req.message
+    render text: req.message + req.code + req.body
   end
 
   def lesson2
