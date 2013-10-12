@@ -12,7 +12,7 @@ class LearnController < ApplicationController
       :PASSWORD => "GYKDrxxSRLtYlonp",
       :AMOUNT => "25",
       :CURRENCY => "USD",
-      :RECEIVEREMAIL => "client_1_akhil05@mail.com"'
+      :RECEIVEREMAIL => "client_1_akhil05@mail.com",
       :SENDEREMAIL => "akhil05@mail.com",
       :PURCHASETYPE => "1",
       :NOTE => "This+is+a+test+transaction.",
