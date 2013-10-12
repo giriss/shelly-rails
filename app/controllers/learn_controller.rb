@@ -7,8 +7,8 @@ class LearnController < ApplicationController
   
   def lesson1
     # POST a send money using Payza api (Testmode=TRUE)
-    @data = "USER=seller_1_akhil05%40mail.com&PASSWORD=Zcf2bNJSg24bZoTY&AMOUNT=25&CURRENCY=USD&RECEIVEREMAIL=client_1_akhil05%40mail.com&SENDEREMAIL=seller_1_akhil05%40mail.com&PURCHASETYPE=1&NOTE=This+is+not+a+test+transaction.&TESTMODE=1"
-    @uri = URI.parse("https://api.payza.com/svc/api.svc/sendmoney")
+    @data = "USER=seller_1_akhil05%40mail.com&PASSWORD=sSgvlj8prNTPXF3Z&AMOUNT=25&CURRENCY=USD&RECEIVEREMAIL=client_1_akhil05%40mail.com&SENDEREMAIL=seller_1_akhil05%40mail.com&PURCHASETYPE=1&NOTE=This+is+not+a+test+transaction.&TESTMODE=0"
+    @uri = URI.parse("https://sandbox.Payza.com/api/api.svc/sendmoney")
     @https = Net::HTTP.new(@uri.host,@uri.port)
     @https.use_ssl = true
     @req = @https.post(@uri.path, @data)
