@@ -21,12 +21,12 @@ class LearnController < ApplicationController
     @url = "https://api.payza.com/svc/api.svc/sendmoney"
     @uri = URI @url
 =begin
-    @uri = URI.parse(@url)
-    @https = Net::HTTP.new(@uri.host,@uri.port)
+    @uri = URI.parse @url
+    @https = Net::HTTP.new @uri.host, @uri.port
     @https.use_ssl = true
-    @post = Net::HTTP::Post.new(@uri.path)
-    @post.set_form_data(@data)
-    @req = @https.request(@post)
+    @post = Net::HTTP::Post.new @uri.path
+    @post.set_form_data @data
+    @req = @https.request @post
 =end
     @req = Net::HTTP.post_form @uri, @data
     @ret = "Post to send money using payza (Test mode)<br />" + @req.body
