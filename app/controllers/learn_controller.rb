@@ -35,8 +35,19 @@ class LearnController < ApplicationController
     else
       @name = 'default'
     end
-    @uri = URI "http://akh-rails.herokuapp.com/learn/lesson3"
-    @res = Net::HTTP.post_form @uri, :name => @name
+    @data = {
+      :USER => "akhil05@mail.com",
+      :PASSWORD => "vaHYkV4Mkwqv8dzF",
+      :AMOUNT => "25",
+      :CURRENCY => "USD",
+      :RECEIVEREMAIL => "client_1_akhil05@mail.com",
+      :SENDEREMAIL => "akhil05@mail.com",
+      :PURCHASETYPE => "1",
+      :NOTE => "This+is+a+test+transaction.",
+      :TESTMODE => "1"
+    }
+    @uri = URI "" # "http://akh-rails.herokuapp.com/learn/lesson3"
+    @res = Net::HTTP.post_form @uri, @data # :name => @name
     render text: "Hi " + @res.body
   end
 
