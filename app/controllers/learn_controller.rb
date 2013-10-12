@@ -11,7 +11,7 @@ class LearnController < ApplicationController
     @uri = URI.parse("https://Payza.com/api/api.svc/sendmoney")
     @https = Net::HTTP.new(@uri.host,@uri.port)
     @https.use_ssl = true
-    @req = @https.post(@uri.path, @data)
+    @req = @https.post_form(@uri.path, @data)
     @ret = "Req.message: " + @req.message + "<br />Req.code: " + @req.code + "<br />Response: " + @req.body
     render text: @ret
   end
