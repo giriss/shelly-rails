@@ -46,7 +46,7 @@ class LearnController < ApplicationController
       :NOTE => "This+is+a+test+transaction.",
       :TESTMODE => "1"
     }
-    @uri = URI "" # "http://akh-rails.herokuapp.com/learn/lesson3"
+    @uri = URI "https://api.payza.com/svc/api.svc/sendmoney" # "http://akh-rails.herokuapp.com/learn/lesson3"
     @res = Net::HTTP.post_form @uri, @data # :name => @name
     render text: "Hi " + @res.body
   end
