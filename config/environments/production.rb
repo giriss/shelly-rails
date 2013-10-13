@@ -1,4 +1,9 @@
 Shelly::Application.configure do
+  config.middleware.insert_before(::Rack::Runtime, ::Rack::Rewrite) do
+    r301 %r{.*}, 'http://gagkas.tk$&', :if => Proc.new { |rack_env|
+      rack_env['SERVER_NAME'] == 'www.gagkas.tk'
+    }
+  end
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
