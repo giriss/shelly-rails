@@ -4,6 +4,7 @@ akh-rails:
   monitoring_email: akhile@dr.com
   domains:
     - akh-rails.shellyapp.com
+    - www.gagkas.tk
   servers:
     app1:
       size: large
