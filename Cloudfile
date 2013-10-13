@@ -5,6 +5,7 @@ akh-rails:
   domains:
     - akh-rails.shellyapp.com
     - www.gagkas.tk
+    - gagkas.tk
   servers:
     app1:
       size: large
