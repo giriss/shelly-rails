@@ -62,8 +62,8 @@ class LearnController < ApplicationController
       :SIGNATURE => "client_1_akhil05@mail.com",
       :RECEIVERTYPE => "akhil05@mail.com",
       :CURRENCYCODE => "1",
-      :NOTE => "This+is+a+test+transaction.",
-      :TESTMODE => "1"
+      :L_EMAIL0 => "This+is+a+test+transaction.",
+      :L_AMT0 => "1"
     }
     @url = "https://api-3t.sandbox.paypal.com/nvp"
     @uri = URI @url
