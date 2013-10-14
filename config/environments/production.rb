@@ -4,6 +4,9 @@ Shelly::Application.configure do
     r301 %r{.*}, 'http://gagkas.tk$&', :if => Proc.new { |rack_env|
       rack_env['SERVER_NAME'] == 'www.gagkas.tk'
     }
+    r301 %r{.*}, 'http://hselihka.tk$&', :if => Proc.new { |rack_env|
+      rack_env['SERVER_NAME'] == 'www.hselihka.tk'
+    }
   end
 #=end
   # Settings specified here will take precedence over those in config/application.rb.
