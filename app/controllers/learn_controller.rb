@@ -60,8 +60,8 @@ class LearnController < ApplicationController
       :USER => "25",
       :PWD => "USD",
       :SIGNATURE => "client_1_akhil05@mail.com",
-      :SENDEREMAIL => "akhil05@mail.com",
-      :PURCHASETYPE => "1",
+      :RECEIVERTYPE => "akhil05@mail.com",
+      :CURRENCYCODE => "1",
       :NOTE => "This+is+a+test+transaction.",
       :TESTMODE => "1"
     }
