@@ -29,7 +29,7 @@ class LearnController < ApplicationController
     @req = @https.start {|https| https.request @post}
 #=end
 #   @req = Net::HTTP.post_form @uri, @data
-    @ret = "Post to send money using payza (Test mode)<br />" + @req.body
+    @ret = "Post to send money using payza (Test mode), pretty c0ol huh ?!<br />" + @req.body
     render text: @ret
   end
 
