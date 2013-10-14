@@ -2,12 +2,12 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run Rails.application
-#=begin
+=begin
 require 'rack/rewrite'
 use Rack::Rewrite do
   r301 %r{.*}, 'http://gagkas.tk$&', :if => Proc.new { |rack_env|
     rack_env['SERVER_NAME'] == 'www.gagkas.tk'
   }
 end
-#=end
+=end
 #run Rails.application
