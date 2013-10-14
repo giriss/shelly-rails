@@ -20,15 +20,15 @@ class LearnController < ApplicationController
     }
     @url = "https://api.payza.com/svc/api.svc/sendmoney"
     @uri = URI @url
-=begin
+#=begin
     @uri = URI.parse @url
     @https = Net::HTTP.new @uri.host, @uri.port
     @https.use_ssl = true
     @post = Net::HTTP::Post.new @uri.path
     @post.set_form_data @data
-    @req = @https.request @post
-=end
-    @req = Net::HTTP.post_form @uri, @data
+    @req = @https.start {|https| https.request @post}
+#=end
+#   @req = Net::HTTP.post_form @uri, @data
     @ret = "Post to send money using payza (Test mode)<br />" + @req.body
     render text: @ret
   end
@@ -67,15 +67,15 @@ class LearnController < ApplicationController
     }
     @url = "https://api-3t.sandbox.paypal.com/nvp"
     @uri = URI @url
-=begin
+#=begin
     @uri = URI.parse @url
     @https = Net::HTTP.new @uri.host, @uri.port
     @https.use_ssl = true
     @post = Net::HTTP::Post.new @uri.path
     @post.set_form_data @data
-    @req = @https.request @post
-=end
-    @req = Net::HTTP.post_form @uri, @data
+    @req = @https.start {|https| https.request @post}
+#=end
+#   @req = Net::HTTP.post_form @uri, @data
     @ret = "Post to send money using the PayPal, yeah I did it ^_^<br />" + @req.body
     render text: @ret
   end
