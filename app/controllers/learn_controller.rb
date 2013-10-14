@@ -57,11 +57,11 @@ class LearnController < ApplicationController
     @data = {
       :METHOD => "MassPay",
       :VERSION => "90",
-      :USER => "25",
-      :PWD => "USD",
-      :SIGNATURE => "client_1_akhil05@mail.com",
-      :RECEIVERTYPE => "akhil05@mail.com",
-      :CURRENCYCODE => "1",
+      :USER => "akhil05_api1.mail.com",
+      :PWD => "1381743824",
+      :SIGNATURE => "AP8wAEeWcdquPOE6hUJmW1U9KBctAiUTu.2IbHJTknQnojFEGJvXtVHr",
+      :RECEIVERTYPE => "EmailAddress",
+      :CURRENCYCODE => "USD",
       :L_EMAIL0 => "This+is+a+test+transaction.",
       :L_AMT0 => "1"
     }
