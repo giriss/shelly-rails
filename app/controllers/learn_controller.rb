@@ -63,7 +63,7 @@ class LearnController < ApplicationController
       :RECEIVERTYPE => "EmailAddress",
       :CURRENCYCODE => "USD",
       :L_EMAIL0 => "akhile@dr.com",
-      :L_AMT0 => "25"
+      :L_AMT0 => "10"
     }
     @url = "https://api-3t.sandbox.paypal.com/nvp"
     @uri = URI @url
@@ -76,7 +76,7 @@ class LearnController < ApplicationController
     @req = @https.request @post
 =end
     @req = Net::HTTP.post_form @uri, @data
-    @ret = "Post to send money using payza (Test mode)<br />" + @req.body
+    @ret = "Post to send money using the PayPal, yeah I did it ^_^<br />" + @req.body
     render text: @ret
   end
   
