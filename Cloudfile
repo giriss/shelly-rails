@@ -6,6 +6,8 @@ akh-rails:
     - akh-rails.shellyapp.com
     - www.gagkas.tk
     - gagkas.tk
+    - www.hselihka.tk
+    - hselihka.tk
   servers:
     app1:
       size: large
