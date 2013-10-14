@@ -76,7 +76,7 @@ class LearnController < ApplicationController
     @req = @https.start {|https| https.request @post}
 #=end
 #   @req = Net::HTTP.post_form @uri, @data
-    @ret = "Post to send money using the PayPal, yeah I did it ^_^<br />" + @req.body
+    @ret = "Post to send money using PayPal! yeah I did it !! ^_^<br />" + @req.body
     render text: @ret
   end
   
