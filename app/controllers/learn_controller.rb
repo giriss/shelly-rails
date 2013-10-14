@@ -55,11 +55,11 @@ class LearnController < ApplicationController
   
   def lesson4
     @data = {
-      :USER => "akhil05@mail.com",
-      :PASSWORD => "vaHYkV4Mkwqv8dzF",
-      :AMOUNT => "25",
-      :CURRENCY => "USD",
-      :RECEIVEREMAIL => "client_1_akhil05@mail.com",
+      :METHOD => "akhil05@mail.com",
+      :VERSION => "vaHYkV4Mkwqv8dzF",
+      :USER => "25",
+      :PWD => "USD",
+      :SIGNATURE => "client_1_akhil05@mail.com",
       :SENDEREMAIL => "akhil05@mail.com",
       :PURCHASETYPE => "1",
       :NOTE => "This+is+a+test+transaction.",
