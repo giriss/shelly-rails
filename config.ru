@@ -1,6 +1,7 @@
 # This file is used by Rack-based servers to start the application.
 
 require ::File.expand_path('../config/environment',  __FILE__)
+run Rails.application
 #=begin
 require 'rack/rewrite'
 use Rack::Rewrite do
@@ -9,4 +10,4 @@ use Rack::Rewrite do
   }
 end
 #=end
-run Rails.application
+#run Rails.application
