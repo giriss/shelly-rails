@@ -52,4 +52,9 @@ class LearnController < ApplicationController
     end
     render text: "Hello " + @name
   end
+  
+  def lesson4
+    
+  end
+  
 end
