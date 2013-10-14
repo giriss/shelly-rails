@@ -4,6 +4,7 @@ Shelly::Application.routes.draw do
   get "learn/lesson2"
   get "learn/lesson3"
   post "learn/lesson3"
+  get "learn/lesson4"
   root "welcome#home"
   get "welcome/home"
   # The priority is based upon order of creation: first created -> highest priority.
