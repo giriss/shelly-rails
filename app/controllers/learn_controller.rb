@@ -15,7 +15,7 @@ class LearnController < ApplicationController
       :RECEIVEREMAIL => "client_1_akhil05@mail.com",
       :SENDEREMAIL => "akhil05@mail.com",
       :PURCHASETYPE => "1",
-      :NOTE => "This+is+a+test+transaction.",
+      :NOTE => "This is a test transaction.",
       :TESTMODE => "1"
     }
     @url = "https://api.payza.com/svc/api.svc/sendmoney"
