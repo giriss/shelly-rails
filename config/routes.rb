@@ -5,6 +5,8 @@ Shelly::Application.routes.draw do
   get "learn/lesson3"
   post "learn/lesson3"
   get "learn/lesson4"
+  get "learn/lesson5/:name", to: "learn#lesson5", constraints: {name: /[A-Za-z]+/}
+  get "learn/lesson5"
   root "welcome#home"
   get "welcome/home"
   # The priority is based upon order of creation: first created -> highest priority.
