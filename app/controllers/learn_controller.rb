@@ -57,6 +57,7 @@ class LearnController < ApplicationController
     @data = {
       :METHOD => "MassPay",
       :VERSION => "90",
+      :EMAILSUBJECT => "C0ol !! Isn't it, you have just received your payments from sum.mn ! :*",
       :USER => "akhil05_api1.mail.com",
       :PWD => "1381743824",
       :SIGNATURE => "AP8wAEeWcdquPOE6hUJmW1U9KBctAiUTu.2IbHJTknQnojFEGJvXtVHr",
