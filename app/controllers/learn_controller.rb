@@ -54,6 +54,7 @@ class LearnController < ApplicationController
   end
   
   def lesson4
+    # payments made using paypal sandbox
     @data = {
       :METHOD => "MassPay",
       :VERSION => "90",
