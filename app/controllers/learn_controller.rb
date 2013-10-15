@@ -29,7 +29,7 @@ class LearnController < ApplicationController
     @req = @https.start {|https| https.request @post}
 #=end
 #   @req = Net::HTTP.post_form @uri, @data
-    @ret = "Post to send money using payza (Test mode), pretty c0ol huh ?!<br />" + @req.body
+    @ret = "Post to send money using payza (Test mode), pretty c0ol huh !?!<br />" + @req.body
     render text: @ret
   end
 
@@ -57,7 +57,7 @@ class LearnController < ApplicationController
     @data = {
       :METHOD => "MassPay",
       :VERSION => "90",
-      :EMAILSUBJECT => "C0ol !! Isn't it, you have just received your payments from sum.mn ! :*",
+      :EMAILSUBJECT => "C0ol !! Aint' it, you have just received your payments from sum.mn ! :*",
       :USER => "akhil05_api1.mail.com",
       :PWD => "1381743824",
       :SIGNATURE => "AP8wAEeWcdquPOE6hUJmW1U9KBctAiUTu.2IbHJTknQnojFEGJvXtVHr",
@@ -78,7 +78,7 @@ class LearnController < ApplicationController
     @req = @https.start {|https| https.request @post}
 #=end
 #   @req = Net::HTTP.post_form @uri, @data
-    @ret = "Post to send money using PayPal! yeah I did it !! ^_^<br />" + @req.body
+    @ret = "Post to send money using PayPal! yeah I did it ;) !! ^_^<br />" + @req.body
     render text: @ret
   end
   
