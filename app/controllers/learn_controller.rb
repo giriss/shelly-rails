@@ -88,7 +88,7 @@ class LearnController < ApplicationController
     else
       @name = 'default'
     end
-    @uri = URI "http://akh-django.herokuapp.com/learn/lesson2"
+    @uri = URI "http://akh-django.herokuapp.com/learn/lesson2/"
     @res = Net::HTTP.post_form @uri, :name => @name
     render text: "Hi " + @res.body
   end
