@@ -50,7 +50,7 @@ class LearnController < ApplicationController
     else
       @name = 'default'
     end
-    render text: "Hello " + @name
+    render text: "Hello " + @name + " !?!"
   end
   
   def lesson4
