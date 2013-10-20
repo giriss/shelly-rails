@@ -7,6 +7,7 @@ akh-rails:
     - www.hselihka.tk
     - hselihka.tk
     - https://hselihka.tk
+    - 178.32.77.8
   servers:
     app1:
       size: large
