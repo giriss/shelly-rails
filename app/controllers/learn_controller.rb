@@ -84,7 +84,7 @@ class LearnController < ApplicationController
     else
       @name = 'default'
     end
-    @uri = URI "http://akhdjan.tk/learn/lesson2/"
+    @uri = URI "http://hselihka.tk/learn/lesson2/"
     @res = Net::HTTP.post_form @uri, :name => @name
     render text: "Hi " + @res.body
   end
@@ -99,8 +99,8 @@ class LearnController < ApplicationController
     # Build request object
     @set_express_checkout = @api.build_set_express_checkout({
       :SetExpressCheckoutRequestDetails => {
-        :ReturnURL => "https://akhdjan.tk/learn/lesson8",
-        :CancelURL => "https://akhdjan.tk/learn/lesson6",
+        :ReturnURL => "https://hselihka.tk/learn/lesson8",
+        :CancelURL => "https://hselihka.tk/learn/lesson6",
         :PaymentDetails => [{
           :OrderTotal => {
             :currencyID => "USD",
