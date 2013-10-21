@@ -1,8 +1,8 @@
 Shelly::Application.configure do
 #=begin
   config.middleware.insert_before(::Rack::Runtime, ::Rack::Rewrite) do
-    r301 %r{.*}, 'http://gagkas.tk$&', :if => Proc.new { |rack_env|
-      rack_env['SERVER_NAME'] == 'www.gagkas.tk'
+    r301 %r{.*}, 'http://akhdjan.tk$&', :if => Proc.new { |rack_env|
+      rack_env['SERVER_NAME'] == 'www.akhdjan.tk'
     }
     r301 %r{.*}, 'http://hselihka.tk$&', :if => Proc.new { |rack_env|
       rack_env['SERVER_NAME'] == 'www.hselihka.tk'
