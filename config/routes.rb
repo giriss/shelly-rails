@@ -12,6 +12,7 @@ Shelly::Application.routes.draw do
   get "learn/lesson8"
   root "welcome#home"
   get "welcome/home"
+  get "B80F621E1D08294B7FAA35DA1DB8771B.txt"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
