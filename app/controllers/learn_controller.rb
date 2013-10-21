@@ -75,6 +75,8 @@ class LearnController < ApplicationController
       @ret = @mass_pay_response.Errors
     end
     @ret = "Post to send money using PayPal! yeah I did it ;) !! ^_^<br />" + @ret
+    
+    render text: @ret
   end
   
   def lesson5
