@@ -98,8 +98,8 @@ class LearnController < ApplicationController
     # Build request object
     @set_express_checkout = @api.build_set_express_checkout({
       :SetExpressCheckoutRequestDetails => {
-        :ReturnURL => "http://gagkas.tk/learn/lesson10",
-        :CancelURL => "http://gagkas.tk/learn/lesson8",
+        :ReturnURL => "https://gagkas.tk/learn/lesson8",
+        :CancelURL => "https://gagkas.tk/learn/lesson6",
         :PaymentDetails => [{
           :OrderTotal => {
             :currencyID => "USD",
@@ -130,45 +130,49 @@ class LearnController < ApplicationController
   end
   
   def lesson8
+    @api = PayPal::SDK::Merchant::API.new
+    
+    # Build request object
     @token = params[:token]
-    @data = {
-      :METHOD => "GetExpressCheckoutDetails",
-      :VERSION => "90",
-      :USER => "akhil05_api1.mail.com",
-      :PWD => "1381743824",
-      :SIGNATURE => "AP8wAEeWcdquPOE6hUJmW1U9KBctAiUTu.2IbHJTknQnojFEGJvXtVHr",
-      :TOKEN => @token
-    }
-    @url = "https://api-3t.sandbox.paypal.com/nvp"
-    @uri = URI @url
-    @uri = URI.parse @url
-    @https = Net::HTTP.new @uri.host, @uri.port
-    @https.use_ssl = true
-    @post = Net::HTTP::Post.new @uri.path
-    @post.set_form_data @data
-    @req = @https.start {|https| https.request @post}
+    @get_express_checkout_details = @api.build_get_express_checkout_details({
+      :Token => @token })
+    
+    # Make API call & get response
+    @get_express_checkout_details_response = @api.get_express_checkout_details(@get_express_checkout_details)
+    
+    # Access Response
+    if @get_express_checkout_details_response.success?
+      @get_express_checkout_details_response.GetExpressCheckoutDetailsResponseDetails
+    else
+      @get_express_checkout_details_response.Errors
+    end
+
+    @amt = @get_express_checkout_details_response.GetExpressCheckoutDetailsResponseDetails.PaymentDetails[0].OrderTotal.value
     @payerid = params[:PayerID] #@req.body.split("PAYERID=")[1].split("&")[0]
-    @data = {
-      :METHOD => "DoExpressCheckoutPayment",
-      :VERSION => "90",
-      :USER => "akhil05_api1.mail.com",
-      :PWD => "1381743824",
-      :SIGNATURE => "AP8wAEeWcdquPOE6hUJmW1U9KBctAiUTu.2IbHJTknQnojFEGJvXtVHr",
-      :TOKEN => @token,
-      :PAYERID => @payerid,
-      :PAYMENTREQUEST_0_AMT => "10",
-      :PAYMENTREQUEST_0_CURRENCYCODE => "USD",
-      :PAYMENTREQUEST_0_PAYMENTACTION => "SALE"
-    }
-    @url = "https://api-3t.sandbox.paypal.com/nvp"
-    @uri = URI @url
-    @uri = URI.parse @url
-    @https = Net::HTTP.new @uri.host, @uri.port
-    @https.use_ssl = true
-    @post = Net::HTTP::Post.new @uri.path
-    @post.set_form_data @data
-    @req = @https.start {|https| https.request @post}
-    render text: @req.body + "<br />Payments done i guess :p"
+
+    @do_express_checkout_payment = @api.build_do_express_checkout_payment({
+      :DoExpressCheckoutPaymentRequestDetails => {
+        :PaymentAction => "Sale",
+        :Token => @token,
+        :PayerID => @payerid,
+        :PaymentDetails => [{
+          :OrderTotal => {
+            :currencyID => "USD",
+            :value => @amt },
+        }] } })
+
+    # Make API call & get response
+    @do_express_checkout_payment_response = @api.do_express_checkout_payment(@do_express_checkout_payment)
+    
+    # Access Response
+    if @do_express_checkout_payment_response.success?
+      @do_express_checkout_payment_response.DoExpressCheckoutPaymentResponseDetails
+      @do_express_checkout_payment_response.FMFDetails
+      @ret = @do_express_checkout_payment_response.Ack
+    else
+      @ret = @do_express_checkout_payment_response.Errors.join
+    end
+    render text: @ret
   end
   
 end
