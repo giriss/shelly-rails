@@ -54,33 +54,27 @@ class LearnController < ApplicationController
   end
   
   def lesson4
-    # payments made using paypal sandbox
-    @data = {
-      :METHOD => "MassPay",
-      :VERSION => "90",
-      :EMAILSUBJECT => "C0ol !! Aint' it, you have just received your payments from sum.mn ! :*",
-      :USER => "akhil05_api1.mail.com",
-      :PWD => "1381743824",
-      :SIGNATURE => "AP8wAEeWcdquPOE6hUJmW1U9KBctAiUTu.2IbHJTknQnojFEGJvXtVHr",
-      :RECEIVERTYPE => "EmailAddress",
-      :CURRENCYCODE => "USD",
-      :L_EMAIL0 => "akhile@dr.com",
-      :L_AMT0 => "10",
-      :L_NOTE0 => "Keep up the good work. Eny0yZz !! ;)"
-    }
-    @url = "https://api-3t.sandbox.paypal.com/nvp"
-    @uri = URI @url
-#=begin
-    @uri = URI.parse @url
-    @https = Net::HTTP.new @uri.host, @uri.port
-    @https.use_ssl = true
-    @post = Net::HTTP::Post.new @uri.path
-    @post.set_form_data @data
-    @req = @https.start {|https| https.request @post}
-#=end
-#   @req = Net::HTTP.post_form @uri, @data
-    @ret = "Post to send money using PayPal! yeah I did it ;) !! ^_^<br />" + @req.body
-    render text: @ret
+    @api = PayPal::SDK::Merchant::API.new
+    @mass_pay = @api.build_mass_pay({
+      :ReceiverType => "EmailAddress",
+      :MassPayItem => [{
+        :ReceiverEmail => "akhile@dr.com",
+        :Amount => {
+          :currencyID => "USD",
+          :value => "10.00" }
+          }]
+        })
+    
+    # Make API call & get response
+    @mass_pay_response = @api.mass_pay(@mass_pay)
+    
+    # Access Response
+    if @mass_pay_response.success?
+      @ret = @mass_pay_response.Ack
+    else
+      @ret = @mass_pay_response.Errors
+    end
+    @ret = "Post to send money using PayPal! yeah I did it ;) !! ^_^<br />" + @ret
   end
   
   def lesson5
