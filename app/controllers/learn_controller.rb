@@ -98,8 +98,8 @@ class LearnController < ApplicationController
     # Build request object
     @set_express_checkout = @api.build_set_express_checkout({
       :SetExpressCheckoutRequestDetails => {
-        :ReturnURL => "https://gagkas.tk/learn/lesson8",
-        :CancelURL => "https://gagkas.tk/learn/lesson6",
+        :ReturnURL => "https://akhdjan.tk/learn/lesson8",
+        :CancelURL => "https://akhdjan.tk/learn/lesson6",
         :PaymentDetails => [{
           :OrderTotal => {
             :currencyID => "USD",
