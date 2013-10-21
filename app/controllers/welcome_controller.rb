@@ -4,9 +4,10 @@ class WelcomeController < ApplicationController
   end
   
   def ssl
-    @ret = <<eof
+    @ret = <<-EOF
 037663EB86F368ACDF991DDAC6BB4A5253E51147
 comodoca.com
-eof
+EOF
     render text: @ret
+  end
 end
