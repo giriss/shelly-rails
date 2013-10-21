@@ -1,6 +1,5 @@
 class LearnController < ApplicationController
 
-  require 'uri'
   require 'net/http'
   require 'net/https'
   skip_before_action :verify_authenticity_token, only: [:lesson3]
