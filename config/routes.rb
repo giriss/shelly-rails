@@ -10,7 +10,7 @@ Shelly::Application.routes.draw do
   get "learn/lesson6"  #, constraints: { protocol: /https/ }
   get "learn/lesson7"  #, constraints: { protocol: /https/ }
   get "learn/lesson8"  #, constraints: { protocol: /https/ }
-  root "learn#lesson4"
+  root "welcome#home"
   get "welcome/home"  #, constraints: { protocol: /https/ }
   get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
