@@ -4,15 +4,15 @@ Shelly::Application.routes.draw do
   get "learn/lesson2"
   get "learn/lesson3"
   post "learn/lesson3"
-  get "learn/lesson4"
+  get "learn/lesson4", constraints: { protocol: /https/ }
   get "learn/lesson5/:name", to: "learn#lesson5", constraints: {name: /[A-Za-z]+/}
   get "learn/lesson5"
-  get "learn/lesson6"
-  get "learn/lesson7"
-  get "learn/lesson8"
+  get "learn/lesson6", constraints: { protocol: /https/ }
+  get "learn/lesson7", constraints: { protocol: /https/ }
+  get "learn/lesson8", constraints: { protocol: /https/ }
   root "welcome#home"
   get "welcome/home", constraints: { protocol: /https/ }
-  get "B80F621E1D08294B7FAA35DA1DB8771B.txt", to: "welcome#ssl"
+  get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
