@@ -4,5 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   def redirect_to_https
     redirect_to protocol: "https://" + request.host + relative_uri unless (request.ssl? || request.local?)
+    #  + request.host + relative_uri - could be removed but its much better to put it.
   end
 end
