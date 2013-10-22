@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  before_filter :need_ssl
   def home
     @message = "Welcome dr."
   end
