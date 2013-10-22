@@ -3,7 +3,7 @@ class LearnController < ApplicationController
   require 'net/http'
   require 'net/https'
   skip_before_action :verify_authenticity_token, only: [:lesson3]
-  before_filter :redirect_to_https, :only => ["lesson4", "lesson6", "lesson7", "lesson8"]
+  before_filter :redirect_to_https, only: ["lesson4", "lesson6", "lesson7", "lesson8"]
   
   def lesson1
     # POST a send money using Payza api (Testmode=TRUE)
