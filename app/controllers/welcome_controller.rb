@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  before_filter :need_ssl
+  before_filter :redirect_to_https, only: ["home"]
   def home
     @message = "Welcome dr."
   end
