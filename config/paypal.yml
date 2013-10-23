@@ -13,8 +13,8 @@ test: &default
   password: 1381743824
   signature: AP8wAEeWcdquPOE6hUJmW1U9KBctAiUTu.2IbHJTknQnojFEGJvXtVHr
   # # With Certificate
-  cert_path: "config/cert_key.pem"
-  sandbox_email_address: akhil05@mail.com
+  # cert_path: "config/cert_key.pem"
+  # sandbox_email_address: akhil05@mail.com
 
   # # IP Address
   # ip_address: 127.0.0.1
