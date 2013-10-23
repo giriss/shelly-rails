@@ -56,8 +56,10 @@ class LearnController < ApplicationController
   def lesson4
     @api = PayPal::SDK::Merchant::API.new
     @mass_pay = @api.build_mass_pay({
+      :EmailSubject => "Payment done.. EnjoyZz !!",
       :ReceiverType => "EmailAddress",
       :MassPayItem => [{
+        :Note => "Keep the good djob  upZxz!!",
         :ReceiverEmail => "akhile@dr.com",
         :Amount => {
           :currencyID => "USD",
