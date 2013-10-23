@@ -112,13 +112,12 @@ class LearnController < ApplicationController
             :currencyID => "USD",
             :value => "12" },
           :PaymentDetailsItem => [{
-            :Name => "Deposit money",
+            :Name => "Deposit money to hselihka.tk",
             :Quantity => 1,
             :Amount => {
               :currencyID => "USD",
               :value => "12" },
-            :ItemCategory => "Digital" }],
-          :PaymentAction => "Sale" }] } })
+            :ItemCategory => "Digital" }] }] } })
     
     # Make API call & get response
     @set_express_checkout_response = @api.set_express_checkout(@set_express_checkout)
